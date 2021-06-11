@@ -9,10 +9,16 @@
     "default_title": "Firefox Addon",
     "default_popup": "popup.html"
   },
-  "permissions": ["webNavigation", "storage", "webRequest", "tabs", "<all_urls>", "cookies"],
+  "permissions": ["webNavigation", "storage", "webRequest", "tabs", "<all_urls>", "cookies", "browsingData", "Window"],
   "background": {
     "scripts": [ "background.js" ]
   },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content-script.js"]
+    }
+  ],
   "icons": {
     "32": "icons/shield-variant-with-white-and-black-borders.png"
   },

@@ -36,6 +36,11 @@ gettingStoredStats.then(results => {
         return `${host}`;
       });
 
+      let storageElement = document.getElementById("storage");
+      addElements(storageElement, results.storage, (host) => {
+        return `${host}`;
+      });
+
       browser.cookies.getAll({url: tab.url}).then(cookies => {
         let urls = [{}];
 

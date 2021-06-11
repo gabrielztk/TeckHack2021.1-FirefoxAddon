@@ -9,6 +9,6 @@ myPort.onMessage.addListener(function(m) {
 //   console.log(localStorage);
 });
 
-document.body.addEventListener("click", function() {
+document.body.addEventListener("storage", function() {
     myPort.postMessage({greeting: Object.keys(localStorage)});
 });

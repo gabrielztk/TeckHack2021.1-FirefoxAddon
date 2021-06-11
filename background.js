@@ -33,11 +33,19 @@ browser.browserAction.onClicked.addListener(function() {
 // ========================================== // 
 
 gettingStoredStats.then(results => {
-  if (!results.stats) {
-    results = {
-      host: {},
-      storage: []
-    };
+  // if (!results.stats) {
+  //   results = {
+  //     host: {},
+  //     storage: []
+  //   };
+  // }
+
+  if (!results.host) {
+    results.host = {};
+  }
+
+  if (!results.storage) {
+    results.storage = [];
   }
 
   browser.webNavigation.onBeforeNavigate.addListener(evt => {
